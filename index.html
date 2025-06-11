@@ -103,7 +103,7 @@
     }
 
     .hero-content h1 {
-      font-size: 3.3rem; /* aumentado em 10% */
+      font-size: 2.1rem; /* aumentado em 10% */
       color: #C8A951;
       margin-bottom: 1rem;
     }
@@ -118,12 +118,7 @@
       to   { opacity: 1; transform: translate(-50%, -50%); }
     }
 
-    footer {
-      background-color: #000;
-      color: #aaa;
-      text-align: center;
-      padding: 1rem;
-    }
+   
 
     @media (max-width: 768px) {
       .nav ul {
@@ -652,6 +647,106 @@ form button:hover {
 
 
 
+/* CSS do Footer */
+.footer-bdb {
+  background: #111;
+  color: #f0c000;
+  font-family: 'Poppins', sans-serif;
+  padding: 50px 20px 30px;
+  position: relative;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 30px;
+}
+
+.footer-column {
+  flex: 1 1 220px;
+  min-width: 200px;
+}
+
+.footer-column h3,
+.footer-column h4 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer-column p,
+.footer-column ul li {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li a {
+  color: #f0c000;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #fff;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.newsletter-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  flex: 1;
+}
+
+.newsletter-form button {
+  background: #f0c000;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: #000;
+  border-radius: 3px;
+  transition: background 0.3s;
+}
+
+.newsletter-form button:hover {
+  background: #fff200;
+}
+
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a {
+  color: #f0c000;
+  margin-right: 10px;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+  font-size: 13px;
+  color: #777;
+}
 
   </style>
 </head>
@@ -717,7 +812,7 @@ form button:hover {
   </div>
 </section>
 
-<a href="https://wa.me/5561996067198" class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp">
+<a href="https://wa.me/+5561996067198" class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp">
   <img src="imagens/logos/wpp.svg" alt="WhatsApp" />
 </a>
 
@@ -833,9 +928,45 @@ form button:hover {
 
 
 
-  <footer>
-    <p>&copy; 2025 Black Diamond Bus. Todos os direitos reservados.</p>
-  </footer>
+<!-- HTML do Footer -->
+<footer class="footer-bdb">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Black Diamond Bus</h3>
+      <p>Viaje com conforto, segurança e estilo. Conectando destinos com excelência.</p>
+    </div>
+    <div class="footer-column">
+      <h4>Links Rápidos</h4>
+      <ul>
+        <li><a href="/sobre">Sobre Nós</a></li>
+        <li><a href="/horarios">Horários</a></li>
+        <li><a href="/contato">Contato</a></li>
+        <li><a href="/politica">Política de Privacidade</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Contato</h4>
+      <p>📍 Rua Diamante Negro, 100<br>São Paulo - SP</p>
+      <p>📞 (11) 99999-0000<br>✉️ contato@blackdiamondbus.com</p>
+    </div>
+    <div class="footer-column">
+      <h4>Fique por dentro</h4>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Seu e-mail" />
+        <button type="submit">Inscrever</button>
+      </form>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Black Diamond Bus. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
 
   <script>
    
@@ -859,7 +990,7 @@ form button:hover {
                   `📅 Data de retirada: ${data}%0A` +
                   `✉️ Mensagem: ${mensagem || 'N/A'}`;
 
-    const numeroWhatsApp = '5561996067198'; // Substitua com seu número (ex: 55 + DDD + número)
+    const numeroWhatsApp = '+5561996067198'; // Substitua com seu número (ex: 55 + DDD + número)
 
     window.open(`https://wa.me/${numeroWhatsApp}?text=${texto}`, '_blank');
   });
