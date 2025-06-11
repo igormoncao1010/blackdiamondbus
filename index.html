@@ -796,11 +796,11 @@ form button:hover {
   </footer>
 
   <script>
-    document.getElementById("menu-toggle").addEventListener("click", function () {
-      document.querySelector(".nav ul").classList.toggle("active");
-    });
+   
+  document.getElementById("menu-toggle").addEventListener("click", function () {
+    document.querySelector(".nav ul").classList.toggle("active");
+  });
 
-    <script>
   document.getElementById('whatsappForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -819,8 +819,10 @@ form button:hover {
 
     const numeroWhatsApp = '5599999999999'; // Substitua com seu número (ex: 55 + DDD + número)
 
-    window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURI(texto)}`, '_blank');
+    window.open(`https://wa.me/${numeroWhatsApp}?text=${texto}`, '_blank');
   });
+
+
 
 
 
