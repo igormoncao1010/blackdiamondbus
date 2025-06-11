@@ -544,34 +544,36 @@ form button:hover {
 
 
 .highlight-section {
-  background: linear-gradient(to right, #000, #111);
-  color: white;
+  background-color: #000;
   padding: 4rem 2rem;
+  color: #fff;
 }
 
 .highlight-container {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .highlight-image {
-  flex: 1 1 400px;
+  flex: 1;
+  min-width: 250px;
   text-align: center;
 }
 
 .highlight-image img {
   max-width: 100%;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  display: block;
 }
 
 .highlight-text {
-  flex: 1 1 400px;
+  flex: 1;
+  min-width: 250px;
 }
 
 .highlight-text h2 {
@@ -582,33 +584,59 @@ form button:hover {
 
 .highlight-text p {
   font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  color: #ddd;
+  color: #eee;
+  margin-bottom: 1.5rem;
 }
 
 .btn-metaverso {
-  display: inline-block;
-  padding: 0.8rem 2rem;
   background-color: #C8A951;
   color: #000;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
   text-decoration: none;
   font-weight: 600;
-  border-radius: 25px;
-  transition: background 0.3s ease;
+  transition: transform 0.3s ease;
+  display: inline-block;
 }
 
-.btn-metaverso:hover {
-  background-color: #a18736;
+.pulse {
+  animation: pulseBtn 1.8s infinite;
 }
 
-/* Responsivo */
+@keyframes pulseBtn {
+  0% {
+    box-shadow: 0 0 0 0 rgba(200, 169, 81, 0.7);
+    transform: scale(1);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(200, 169, 81, 0);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(200, 169, 81, 0);
+    transform: scale(1);
+  }
+}
+
 @media (max-width: 768px) {
   .highlight-container {
     flex-direction: column;
     text-align: center;
+    gap: 0.5rem;
+  }
+
+  .highlight-image img {
+    max-width: 85%;
+    margin-top: -10px;
+  }
+
+  .highlight-text h2 {
+    margin-top: 0.5rem;
   }
 }
+
+
+
 
   </style>
 </head>
@@ -711,17 +739,17 @@ form button:hover {
 <section class="highlight-section">
   <div class="highlight-container">
     <div class="highlight-image">
-      <img src="imagens/carros/02.png" alt="Volvo 7900 Elétrico">
+      <img src="imagens/carros/02.png" alt="Ônibus Volvo 7900" />
     </div>
     <div class="highlight-text">
       <h2>Volvo 7900</h2>
-      <p>
-        O Volvo 7900 Elétrico é o futuro da mobilidade urbana. Com emissão zero, baixo ruído e desempenho premium, proporciona conforto, acessibilidade e sustentabilidade. Uma experiência inovadora para o transporte coletivo.
-      </p>
-      <a href="metaverso.html" class="btn-metaverso">Metaverso</a>
+      <p>Modelo 100% elétrico, silencioso e sustentável. Ideal para cidades inteligentes e empresas que se preocupam com o futuro.</p>
+      <a href="metaverso.html" class="btn-metaverso pulse">Metaverso</a>
     </div>
   </div>
 </section>
+
+
 
 
 
