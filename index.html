@@ -153,37 +153,52 @@
       }
     }
 
-    .features-bar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #000;
-  color: #fff;
-  padding: 2.5rem 1rem;
-  flex-wrap: wrap;
+   .info-cards-section01 {
+  background-color: white;
+  padding: 4rem 2rem;
+  color: white;
   text-align: center;
 }
 
-.feature-item {
-  flex: 1 1 250px;
-  padding: 1rem;
+.info-cards-container01 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.icon-placeholder {
+.info-card01 {
+  background-color: #111;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  width: 280px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.info-card01 img {
+  width: 60px;
+  height: 60px;
   margin-bottom: 1rem;
+  filter: brightness(1.2);
 }
 
-.icon-placeholder img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  filter: brightness(1.2); /* realça o dourado se quiser */
+.info-card01 h3 {
+  color: #C8A951;
+  font-size: 1.3rem;
+  margin-top: 0;
 }
-.feature-item h3 {
-  font-weight: 500;
-  font-size: 1.2rem;
-  color: white;
+
+/* Efeito ao entrar na tela */
+.info-card01.show01 {
+  opacity: 1;
+  transform: translateY(0);
 }
+
 
 .form-section {
   background-image: url('imagens/background/01.png');
@@ -665,29 +680,25 @@ form button:hover {
     </div>
   </section>
 
-  <section class="features-bar">
-  <div class="feature-item">
-    <!-- Substitua esse <img> pelo seu ícone -->
-    <div class="icon-placeholder">
-      <img src="imagens/logos/01.svg" alt="Missão" />
+  <section class="info-cards-section01" id="infoCards01">
+  <div class="info-cards-container01">
+    <div class="info-card01 hidden01">
+      <img src="imagens/logos/01.svg" alt="Ícone Sustentável" />
+      <h3>Tecnologia</h3>
     </div>
-    <h3>Tecnologia</h3>
-  </div>
-
-  <div class="feature-item">
-    <div class="icon-placeholder">
-      <img src="imagens/logos/02.svg" alt="Segurança" />
+    <div class="info-card01 hidden01">
+      <img src="imagens/logos/02.svg" alt="Ícone Conforto" />
+      <h3>Segurança</h3>
     </div>
-    <h3>Segurança </h3>
-  </div>
-
-  <div class="feature-item">
-    <div class="icon-placeholder">
-      <img src="imagens/logos/03.svg" alt="Conforto" />
+    <div class="info-card01 hidden01">
+      <img src="imagens/logos/03.svg" alt="Ícone Tecnologia" />
+      <h3>Economia</h3>
     </div>
-    <h3>Economia</h3>
   </div>
 </section>
+
+
+  
 
 <section class="form-section">
   <div class="form-content">
@@ -854,6 +865,22 @@ form button:hover {
   });
 
 
+
+
+  function revealOnScroll01() {
+    const cards01 = document.querySelectorAll('.info-card01');
+    const trigger01 = window.innerHeight * 0.85;
+
+    cards01.forEach(card => {
+      const top = card.getBoundingClientRect().top;
+      if (top < trigger01) {
+        card.classList.add('show01');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealOnScroll01);
+  window.addEventListener('load', revealOnScroll01);
 
 
 
