@@ -803,6 +803,65 @@ form button:hover {
   background-color: #ffd700;
 }
 
+
+
+.verbas-section {
+  background-image: url('imagens/background/02.png'); /* Substitua pela sua */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.verbas-section .overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* escurece a imagem */
+  padding: 3rem;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+.verbas-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.btn-pulsante {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #00cc66;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+  transition: background 0.3s;
+}
+
+.btn-pulsante:hover {
+  background-color: #00994d;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 204, 102, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(0, 204, 102, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 204, 102, 0);
+  }
+}
   </style>
 </head>
 <body>
@@ -919,7 +978,12 @@ form button:hover {
 </section>
 
 
-
+<section class="verbas-section">
+  <div class="overlay">
+    <h2>Confira aqui as verbas disponibilizadas para seu município</h2>
+    <a href="valores.html" class="btn-pulsante">Confira</a>
+  </div>
+</section>
 
 
 <section class="testimonials-section">
