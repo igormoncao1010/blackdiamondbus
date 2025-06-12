@@ -498,7 +498,7 @@ form button:hover {
 
 .tarja-preta {
   background-color: #000;
-  color: #C8A951;
+  color: #35d653;
   padding: 4rem 1rem;
   text-align: center;
   overflow: hidden;
@@ -554,7 +554,7 @@ form button:hover {
 
 
 .highlight-section {
-  background-color: #000;
+  background-color: #35d653;
   padding: 4rem 2rem;
   color: #fff;
 }
@@ -588,7 +588,7 @@ form button:hover {
 
 .highlight-text h2 {
   font-size: 2.5rem;
-  color: #C8A951;
+  color: white;
   margin-bottom: 1rem;
 }
 
@@ -599,8 +599,8 @@ form button:hover {
 }
 
 .btn-metaverso {
-  background-color: #C8A951;
-  color: #000;
+  background-color: black;
+  color: white;
   padding: 0.7rem 1.5rem;
   border-radius: 30px;
   text-decoration: none;
@@ -748,6 +748,61 @@ form button:hover {
   color: #777;
 }
 
+
+/* CSS da section */
+.volvo-section {
+  padding: 60px 20px;
+  background-color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.volvo-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
+
+.volvo-image img {
+  width: 100%;
+  max-width: 550px;
+
+}
+
+.volvo-text {
+  flex: 1;
+}
+
+.volvo-text h2 {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.volvo-text p {
+  margin-bottom: 12px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #f0c000;
+  color: #111;
+  padding: 12px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #ffd700;
+}
+
   </style>
 </head>
 <body>
@@ -758,7 +813,7 @@ form button:hover {
     <nav class="nav">
       <ul>
         <li><a href="sobre-nos.html">Sobre Nós</a></li>
-        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="fichas.html">Catálogo</a></li>
       </ul>
     </nav>
     <div class="menu-toggle" id="menu-toggle">&#9776;</div>
@@ -770,8 +825,8 @@ form button:hover {
       Seu navegador não suporta vídeo HTML5.
     </video>
     <div class="hero-content">
-      <h1>Bem-vindo à Black Diamond Bus</h1>
-      <p>O luxo e o conforto que sua viagem merece</p>
+      <h1>Black Diamond Bus</h1>
+      <p>Excelência em aluguel de ônibus para prefeituras</p>
     </div>
   </section>
 
@@ -798,11 +853,12 @@ form button:hover {
 <section class="form-section">
   <div class="form-content">
     <div class="text-left">
-      <h2>Solicite seu orçamento</h2>
+      <h2>Solicite a ATA do seu município</h2>
       <p>Preencha o formulário e entraremos em contato via WhatsApp.</p>
     </div>
     <form id="whatsappForm">
-      <input type="text" name="nome" placeholder="Nome / Empresa" required />
+      <input type="text" name="nome" placeholder="Nome / Prefeitura" required />
+      <input type="cargo" name="cargo" placeholder="Cargo" required />
       <input type="tel" name="telefone" placeholder="Telefone com DDD" required />
       <input type="number" name="quantidade" placeholder="Quantos ônibus?" required min="1" />
       <input type="date" name="data" placeholder="Data de retirada" required />
@@ -819,26 +875,32 @@ form button:hover {
 
 <section class="tarja-preta animar">
   <div class="conteudo">
-    <h1 class="titulo">Aluguel de Ônibus Premium</h1>
-    <p class="subtitulo">Transporte confortável, seguro e sustentável para sua empresa</p>
+    <h1 class="titulo">Aluguel de Ônibus Euro 6 e Elétricos</h1>
+    <p class="subtitulo">A Black Diamond Bus tem o que há de melhor para sua prefeitura.</p>
   </div>
 </section>
 
 
 
-<section class="fleet-section">
-  <div class="fleet-content">
-    <div class="fleet-text">
+<!-- Section com imagem à esquerda e informações à direita -->
+<section class="volvo-section">
+  <div class="volvo-container">
+    <div class="volvo-image">
+      <img src="imagens/carros/01.png" />
+    </div>
+    <div class="volvo-text">
       <h2>Volvo B340R Euro 6</h2>
-      <p>
-        Chassi com tecnologia Euro 6, alta eficiência de combustível e baixas emissões. Ideal para viagens rodoviárias de médio e longo percurso. Equipado com ar-condicionado, Wi-Fi, tomadas USB e suspensão pneumática.
-      </p>
-    </div>
-    <div class="fleet-image">
-      <img src="imagens/carros/01.png" alt="Ônibus Volvo B340R Euro 6">
+      <p><strong>Potência:</strong> 380 cv | <strong>Torque:</strong> 1.800 Nm</p>
+      <p><strong>Motor:</strong> Volvo D11K – 6 cilindros em linha, com injeção eletrônica e turbo</p>
+      <p><strong>Transmissão:</strong> Automatizada Volvo I-Shift com 12 marchas</p>
+      <p><strong>Freios:</strong> A disco com EBS, ABS, VEB+ e sistema de estabilidade ESP</p>
+      <p><strong>Suspensão:</strong> Pneumática com controle eletrônico e função rebaixamento</p>
+      <p><strong>Categoria de emissões:</strong> Euro 6 / Proconve P-8</p>
+      <a href="volvo.html.html" class="btn-metaverso pulse">Finha Técnica</a>
     </div>
   </div>
 </section>
+
 
 
 
@@ -851,6 +913,7 @@ form button:hover {
       <h2>Volvo 7900</h2>
       <p>Modelo 100% elétrico, silencioso e sustentável. Ideal para cidades inteligentes e empresas que se preocupam com o futuro.</p>
       <a href="metaverso.html" class="btn-metaverso pulse">Metaverso</a>
+    
     </div>
   </div>
 </section>
@@ -861,21 +924,21 @@ form button:hover {
 
 <section class="testimonials-section">
   <div class="container">
-    <h2>Empresas que confiam na Black Diamond Bus</h2>
+    <h2>Municípios que confiam em nós</h2>
     <div class="testimonials-grid">
       <div class="testimonial">
-        <p>"A Black Diamond Bus superou nossas expectativas. Atendimento impecável e frota moderna. Recomendamos 100%."</p>
-        <h4>Transportes Andrade</h4>
+        <p>"A Black Diamond Bus superou nossas expectativas. Atendimento impecável e frota moderna."</p>
+        <h4>Alto do Paraíso</h4>
       </div>
 
       <div class="testimonial">
-        <p>"Conseguimos realizar um grande evento corporativo com tranquilidade graças à pontualidade e conforto dos ônibus da Black Diamond."</p>
-        <h4>Grupo Verde Vale</h4>
+        <p>"Atualizamos toda frota ônibus com a Black Diamond."</p>
+        <h4>Vale grande</h4>
       </div>
 
       <div class="testimonial">
-        <p>"Eles são referência em qualidade e segurança. Sempre escolhemos a Black Diamond para nossas viagens executivas."</p>
-        <h4>Logística Elite</h4>
+        <p>"Eles são referência em qualidade."</p>
+        <h4>Festolina</h4>
       </div>
     </div>
   </div>
@@ -933,13 +996,13 @@ form button:hover {
   <div class="footer-container">
     <div class="footer-column">
       <h3>Black Diamond Bus</h3>
-      <p>Viaje com conforto, segurança e estilo. Conectando destinos com excelência.</p>
+      <p>Exelência em alugueis de ônibus para prefeituras.</p>
     </div>
     <div class="footer-column">
       <h4>Links Rápidos</h4>
       <ul>
-        <li><a href="/sobre">Sobre Nós</a></li>
-        <li><a href="/horarios">Horários</a></li>
+        <li><a href="sobre-nos.html">Sobre Nós</a></li>
+        <li><a href="faq.html">FAQ</a></li>
         <li><a href="/contato">Contato</a></li>
         <li><a href="/politica">Política de Privacidade</a></li>
       </ul>
@@ -983,8 +1046,9 @@ form button:hover {
     const data = this.data.value;
     const mensagem = this.mensagem.value.trim();
 
-    const texto = `*Solicitação de Orçamento - BlackDiamond Bus*%0A` +
-                  `👤 Nome/Empresa: ${nome}%0A` +
+    const texto = `*Solicitação de Ata - Black Diamond Bus*%0A` +
+                  `👤 Nome/Prefeitura: ${nome}%0A` +
+                  `👤 Cargo: ${nome}%0A` +
                   `📞 Telefone: ${telefone}%0A` +
                   `🚌 Quantidade de ônibus: ${quantidade}%0A` +
                   `📅 Data de retirada: ${data}%0A` +
