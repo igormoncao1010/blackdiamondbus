@@ -907,6 +907,95 @@ form button:hover {
       display: none;
     }
   }
+
+
+    /* Estilos base - mobile */
+  #sustentabilidade {
+    background: linear-gradient(135deg, #2e7d32, #81c784);
+    color: #e8f5e9;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 900px;
+    margin: 0; /* remove margem para ficar grudado */
+    box-shadow: 0 8px 20px rgba(46, 125, 50, 0.25);
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  /* Layout interno flexível */
+  #sustentabilidade > div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  #sustentabilidade svg {
+    filter: drop-shadow(0 0 2px rgba(255 255 255 0.6));
+  }
+
+  #sustentabilidade h2 {
+    font-size: 2.8rem;
+    margin: 0 0 20px;
+    font-weight: 700;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.25);
+  }
+
+  #sustentabilidade p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+
+  /* Estilos para desktop (largura >= 1024px) */
+  @media (min-width: 1024px) {
+    #sustentabilidade {
+      padding: 80px 40px;
+      max-width: 100%;
+      margin: 0; /* sem margem para colar no conteúdo */
+      border-radius: 0;
+      box-shadow: none;
+
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      height: 60px; /* tarja mais fina */
+
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    #sustentabilidade > div {
+      width: 100%;
+      flex-wrap: nowrap;
+    }
+
+    #sustentabilidade svg {
+      width: 32px !important;
+      height: 32px !important;
+      filter: none !important;
+      flex-shrink: 0;
+    }
+
+    #sustentabilidade h2 {
+      font-size: 1.5rem;
+      margin: 0;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    #sustentabilidade p {
+      font-size: 1rem;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex-grow: 1;
+    }
+  }
   </style>
 </head>
 <body>
@@ -1053,6 +1142,32 @@ form button:hover {
   <div class="overlay">
     <h2>Confira aqui as verbas disponibilizadas para seu município</h2>
     <a href="valores.html" class="btn-pulsante">Confira</a>
+  </div>
+</section>
+
+
+<section id="sustentabilidade">
+  <div>
+    <div style="flex: 0 0 auto; text-align: center;">
+      <!-- Ícone minimalista de sol -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#e8f5e9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="110" height="110">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="4"></line>
+        <line x1="12" y1="20" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"></line>
+        <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="4" y2="12"></line>
+        <line x1="20" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"></line>
+        <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"></line>
+      </svg>
+    </div>
+    <div style="flex: 1 1 auto; min-width: 280px;">
+      <h2>Sustentabilidade e Energia Limpa</h2>
+      <p>
+        Se a energia usada para recarregar os ônibus for proveniente de fontes <strong>renováveis</strong> (como solar ou eólica), o impacto ambiental é ainda menor, tornando o sistema de transporte <em>praticamente neutro em carbono</em>.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -1348,6 +1463,22 @@ window.addEventListener('resize', () => {
   scrollPos = cotacaoWrapper.scrollLeft;
   criarCopiaVisual();
 });
+
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const section = document.getElementById('sustentabilidade');
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(section);
+  });
 
   </script>
 </body>
