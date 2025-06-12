@@ -862,6 +862,30 @@ form button:hover {
     box-shadow: 0 0 0 0 rgba(0, 204, 102, 0);
   }
 }
+
+.cotacao-bar {
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 10px 20px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      position: relative;
+      z-index: 999;
+    }
+
+    .moeda {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .moeda span {
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -869,6 +893,7 @@ form button:hover {
     <div class="logo">
       <img src="imagens/logos/logs.svg" alt="Logo BlackDiamond Bus" />
     </div>
+    
     <nav class="nav">
       <ul>
         <li><a href="sobre-nos.html">Sobre Nós</a></li>
@@ -877,6 +902,10 @@ form button:hover {
     </nav>
     <div class="menu-toggle" id="menu-toggle">&#9776;</div>
   </header>
+  <section class="cotacao-bar">
+    <div class="moeda">💵 Dólar: <span id="usd">Carregando...</span></div>
+    <div class="moeda">💶 Euro: <span id="eur">Carregando...</span></div>
+  </section>
 
   <section class="hero-video-container">
     <video autoplay muted loop playsinline>
@@ -1073,7 +1102,7 @@ form button:hover {
     </div>
     <div class="footer-column">
       <h4>Contato</h4>
-      <p>📍 Rua Diamante Negro, 100<br>São Paulo - SP</p>
+      <p>📍 Rua Sr 5, 111, Qud. 9 Lt. 19-A Sl. 02<br>Parque Santa Rita, Goiânia-GO</p>
       <p>📞 (11) 99999-0000<br>✉️ contato@blackdiamondbus.com</p>
     </div>
     <div class="footer-column">
@@ -1143,7 +1172,25 @@ form button:hover {
 
 
 
+async function atualizarCotacoes() {
+      try {
+        const response = await fetch('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL');
+        const data = await response.json();
 
+        const usd = parseFloat(data.USDBRL.bid).toFixed(2).replace('.', ',');
+        const eur = parseFloat(data.EURBRL.bid).toFixed(2).replace('.', ',');
+
+        document.getElementById('usd').textContent = `R$ ${usd}`;
+        document.getElementById('eur').textContent = `R$ ${eur}`;
+      } catch (error) {
+        document.getElementById('usd').textContent = 'Erro';
+        document.getElementById('eur').textContent = 'Erro';
+        console.error('Erro ao buscar cotações:', error);
+      }
+    }
+
+    atualizarCotacoes();
+    setInterval(atualizarCotacoes, 60000); // Atualiza a cada 60 segundos
   </script>
 </body>
 </html>
